@@ -2,7 +2,7 @@ const fs = require('fs');
 
 const boardLength = 5;
 const useSample = false;
-const inputFileName = `./input${useSample ? '-sample' : ''}-4.txt`;
+const inputFileName = `./input/input${useSample ? '-sample' : ''}-4.txt`;
 const debugLength = 50;
 const debugStruct = {};
 const printArrayThreshold = 10;

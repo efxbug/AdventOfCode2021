@@ -5,7 +5,7 @@ const debugStruct = {};
 const printArrayThreshold = 10;
 
 function readInputFile(useSample) {
-    const inputFileName = `./input${useSample ? '-sample' : ''}-7.txt`;
+    const inputFileName = `./input/input${useSample ? '-sample' : ''}-7.txt`;
     return fs.readFileSync(inputFileName, { encoding: 'utf8', flag: 'r' }).split(',').filter(value => value);
 }
 function debug(...args) {

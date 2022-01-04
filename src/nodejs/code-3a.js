@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const input = fs.readFileSync('./input-3.txt', { encoding: 'utf8', flag: 'r' }).split('\n');
+const input = fs.readFileSync('./input/input-3.txt', { encoding: 'utf8', flag: 'r' }).split('\n');
 const oneOccurencesArray = [];
 let valueLength;
 let values = 0;

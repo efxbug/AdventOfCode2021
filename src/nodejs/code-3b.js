@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const input = fs.readFileSync('./input-3.txt', { encoding: 'utf8', flag: 'r' }).split('\n').filter(value => value);
+const input = fs.readFileSync('./input/input-3.txt', { encoding: 'utf8', flag: 'r' }).split('\n').filter(value => value);
 function countOnes(values, position) {
     let result = 0;
     for (const value of values) {

@@ -1,26 +1,4 @@
-const fs = require('fs');
-const { exit } = require('process');
-
-const debugLength = 50;
-const debugStruct = {};
-const printArrayThreshold = 10;
-
-function readInputFile(useSample) {
-    const inputFileName = `./input${useSample ? '-sample' : ''}-10.txt`;
-    return fs.readFileSync(inputFileName, { encoding: 'utf8', flag: 'r' }).split('\n').filter(value => value);
-}
-function debug(...args) {
-    if (debugStruct.messages === undefined) {
-        debugStruct.messages = 0;
-    }
-    if (debugStruct.messages < debugLength) {
-        console.info(...args);
-        debugStruct.messages++;
-    }
-}
-function printArray(name, values) {
-    return `${name}=${(values.length > printArrayThreshold) ? values.length : `[${values}]`}`;
-}
+const { readInputFile, genericMain } = require('./generic');
 
 class Sym {
     constructor(start, stop, errorScore, incompleteScore) {
@@ -93,9 +71,11 @@ function checkRow(row, useErrors) {
     }
     return result;
 }
-function game(input, firstPart) {
+function game(useSample, part) {
     let score = 0;
     const scores = [];
+    const firstPart = part === 0;
+    const input = readInputFile(useSample, firstPart);
     for (const row of input) {
         const res = checkRow(row, firstPart);
         if (firstPart) {
@@ -115,8 +95,5 @@ function game(input, firstPart) {
 }
 
 (function () {
-    const useSample = false;
-    const firstPart = false;
-    const result = game(readInputFile(useSample, firstPart));
-    console.log(`Syntax error score: ${result}`);
+    genericMain(game);
 })();

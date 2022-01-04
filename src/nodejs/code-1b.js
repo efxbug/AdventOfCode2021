@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const input = fs.readFileSync('./input-1.txt', { encoding: 'utf8', flag: 'r' }).split('\n');
+const input = fs.readFileSync('./input/input-1.txt', { encoding: 'utf8', flag: 'r' }).split('\n');
 let window;
 let sum = null;
 let increments = 0;
